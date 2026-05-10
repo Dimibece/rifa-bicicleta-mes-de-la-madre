@@ -301,14 +301,6 @@ export default function App() {
                  className="w-52 h-52 rounded-2xl mx-auto object-cover"
                 />
 
-                <p className="text-sm text-gray-500 mt-3">
-                  Envía el comprobante al WhatsApp:
-                </p>
-
-                <p className="text-xl font-bold text-pink-500 mt-1">
-                  321 633 6337
-                </p>
-
                 <div className="mt-4">
                   <p className="text-sm text-gray-500">
                   Cuenta de ahorros Bancolombia
@@ -325,6 +317,13 @@ export default function App() {
                 </button>
               </div>
 
+              <p className="text-sm text-gray-500 mt-5">
+                  Una vez realizado el pago, envía el comprobante al WhatsApp:
+                </p>
+
+                <p className="text-xl font-bold text-pink-500 mt-1">
+                  321 633 6337
+                </p>
 
 
               </div>
