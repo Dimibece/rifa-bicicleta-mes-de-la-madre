@@ -163,7 +163,7 @@ export default function App() {
               </p>
             </div>
           </div>
-
+          </div>
           <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
 
           <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
