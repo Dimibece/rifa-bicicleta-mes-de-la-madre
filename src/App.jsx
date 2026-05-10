@@ -142,16 +142,7 @@ export default function App() {
                 <p>5️⃣ Envía tu comprobante por WhatsApp.</p>
               </div>
 
-              <div className="mt-6 grid md:grid-cols-3 gap-4 text-center">
-                <div className="bg-pink-50 rounded-2xl p-4">
-                  <p className="font-semibold text-[#4a2c21]">🎟 1 número</p>
-                  <p className="text-pink-500 text-2xl font-bold">$10.000</p>
-                </div>
-
-                <div className="bg-pink-50 rounded-2xl p-4">
-                  <p className="font-semibold text-[#4a2c21]">🎟🎟 2 números</p>
-                  <p className="text-pink-500 text-2xl font-bold">$18.000</p>
-                </div>
+              <div className="mt-6 max-w-sm mx-auto">
 
                 <div className="bg-pink-50 rounded-2xl p-4">
                   <p className="font-semibold text-[#4a2c21]">📅 Sorteo esperado</p>
@@ -178,10 +169,10 @@ export default function App() {
                   setTicketOption("1");
                   setSelectedNumbers([]);
                 }}
-                className={`px-6 py-3 rounded-2xl font-semibold transition ${
+                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${
                   ticketOption === "1"
-                    ? "bg-pink-500 text-white"
-                    : "bg-pink-100 text-[#4a2c21]"
+                    ? "bg-pink-500 text-white scale-105 shadow-lg"
+                    : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
                 }`}
               >
                 1 número — $10.000
@@ -192,10 +183,10 @@ export default function App() {
                   setTicketOption("2");
                   setSelectedNumbers([]);
                 }}
-                className={`px-6 py-3 rounded-2xl font-semibold transition ${
+                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${
                   ticketOption === "2"
-                    ? "bg-pink-500 text-white"
-                    : "bg-pink-100 text-[#4a2c21]"
+                    ? "bg-pink-500 text-white scale-105 shadow-lg"
+                    : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
                 }`}
               >
                 2 números — $18.000
