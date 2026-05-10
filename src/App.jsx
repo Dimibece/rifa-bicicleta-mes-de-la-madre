@@ -71,8 +71,8 @@ export default function App() {
 
   const handleWhatsApp = () => {
 
-    if (!customerName || !customerPhone) {
-      alert("Debes completar tu nombre y WhatsApp.");
+    if (!customerName || customerPhone.length !== 10) {
+      alert("Debes ingresar un nombre y un WhatsApp válido de 10 dígitos.");
       return;
     }
   
@@ -162,8 +162,9 @@ export default function App() {
                 *La fecha puede ajustarse en caso de no completarse los números disponibles.
               </p>
             </div>
-          </div>
-          
+           </div>
+           </div>
+
           <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
 
           <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
@@ -301,10 +302,17 @@ export default function App() {
             <input
               type="tel"
               value={customerPhone}
-              onChange={(e) => setCustomerPhone(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value.replace(/\D/g, "");
+                
+                if (value.length <= 10) {
+                  setCustomerPhone(value);
+                }
+              }}
               placeholder="Ej: 3001234567"
               className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
-            />
+            />  
+
           </div>
               <div>
                 <p className="text-gray-500">Números seleccionados</p>
