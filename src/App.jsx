@@ -157,7 +157,7 @@ export default function App() {
           <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
 
           <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
-            Escoge una opción
+            Escoge una opción 👇
           </p>
 
             <div className="flex justify-center gap-4 mb-4 flex-wrap">
