@@ -264,8 +264,8 @@ export default function App() {
       </div>
 
       {showModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <div className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl my-10 max-h-[90vh] overflow-y-auto">
             <h2 className="text-3xl font-bold text-[#4a2c21] text-center mb-6">
               Confirmar números 🌸
             </h2>
