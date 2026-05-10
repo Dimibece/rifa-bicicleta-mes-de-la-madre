@@ -7,11 +7,7 @@ export default function App() {
 
   const [reservedNumbers, setReservedNumbers] = useState([]);
 
-  const availableNumbers =
-    100 -
-    reservedNumbers.filter(
-      (item) => item.estado === "confirmado"
-    ).length;
+  const availableNumbers = 100 - reservedNumbers.length;
 
   const bikeImages = [
     "/images/Bici1.jpeg",
