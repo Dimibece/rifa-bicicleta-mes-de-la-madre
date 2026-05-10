@@ -1,12 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const numbers = Array.from({ length: 100 }, (_, i) =>
     i.toString().padStart(2, "0")
   );
 
-  const reservedNumbers = ["03", "07", "12", "22"];
-  const availableNumbers = 100 - reservedNumbers.length;
+  const [reservedNumbers, setReservedNumbers] = useState([]);
+
+  const availableNumbers =
+    100 -
+    reservedNumbers.filter(
+      (item) => item.estado === "confirmado"
+    ).length;
 
   const bikeImages = [
     "/images/Bici1.jpeg",
@@ -24,11 +29,37 @@ export default function App() {
   const [selectedNumbers, setSelectedNumbers] = useState([]);
   const [ticketOption, setTicketOption] = useState("1");
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    fetch(
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbK-VG5lATbDEwZybKYRkJUNgtHFMravrhZAribxZQ48cEjKx7Ej7XgBAvgZLwpgxtlOzGaQ0T5yFL/pub?gid=0&single=true&output=csv"
+    )
+      .then((response) => response.text())
+      .then((data) => {
+        const lines = data.split("\n").slice(1);
+  
+        const formatted = lines
+          .map((line) => {
+            const [numero, estado] = line.split(",");
+  
+            return {
+              numero: numero?.trim(),
+              estado: estado?.trim(),
+            };
+          })
+          .filter((item) => item.numero);
+  
+        setReservedNumbers(formatted);
+      });
+  }, []);
 
   const maxSelections = ticketOption === "1" ? 1 : 2;
 
   const toggleNumber = (number) => {
-    if (reservedNumbers.includes(number)) return;
+    const reserved = reservedNumbers.find(
+      (item) => item.numero === number
+    );
+    
+    if (reserved?.estado === "confirmado") return;
 
     if (selectedNumbers.includes(number)) {
       setSelectedNumbers(selectedNumbers.filter((n) => n !== number));
@@ -177,7 +208,9 @@ export default function App() {
             <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
 
               {numbers.map((number) => {
-                const reserved = reservedNumbers.includes(number);
+                const reserved = reservedNumbers.find(
+                  (item) => item.numero === number
+                );
                 const selected = selectedNumbers.includes(number);
 
                 return (
@@ -187,8 +220,10 @@ export default function App() {
                     className={`
                       h-14 rounded-2xl font-bold transition-all
                       ${
-                        reserved
+                        reserved?.estado === "confirmado"
                           ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                          : reserved?.estado === "visual"
+                          ? "bg-pink-200 text-pink-500"
                           : selected
                           ? "bg-pink-500 text-white scale-105"
                           : "bg-pink-100 hover:bg-pink-200 text-[#4a2c21]"
