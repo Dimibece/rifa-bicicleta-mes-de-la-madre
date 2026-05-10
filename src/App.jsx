@@ -16,9 +16,7 @@ export default function App() {
     "/images/Bici4.jpeg",
     "/images/Bici5.jpeg",
     "/images/Bici6.jpeg",
-    "/images/Bici7.jpeg",
     "/images/Bici8.jpeg",
-    "/images/Bici9.jpeg",
     "/images/Bici10.jpeg"
   ];
 
