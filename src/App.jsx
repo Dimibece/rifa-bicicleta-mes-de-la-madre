@@ -23,6 +23,8 @@ export default function App() {
   const [selectedNumbers, setSelectedNumbers] = useState([]);
   const [ticketOption, setTicketOption] = useState("1");
   const [showModal, setShowModal] = useState(false);
+  const [customerName, setCustomerName] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
   useEffect(() => {
     fetch(
       "https://docs.google.com/spreadsheets/d/e/2PACX-1vSbK-VG5lATbDEwZybKYRkJUNgtHFMravrhZAribxZQ48cEjKx7Ej7XgBAvgZLwpgxtlOzGaQ0T5yFL/pub?gid=0&single=true&output=csv"
@@ -68,23 +70,32 @@ export default function App() {
   const totalPrice = ticketOption === "1" ? "$10.000" : "$18.000";
 
   const handleWhatsApp = () => {
+
+    if (!customerName || !customerPhone) {
+      alert("Debes completar tu nombre y WhatsApp.");
+      return;
+    }
+  
     if (selectedNumbers.length < maxSelections) {
       alert(`Debes seleccionar ${maxSelections} número(s).`);
       return;
     }
-
+  
     const message = encodeURIComponent(
-      `🌸 RIFA DÍA DE LA MADRE 🌸
-    
-    Hola, quiero confirmar los números:
-    
-    🎟 ${selectedNumbers.join(", ")}
-    
-    💰 Total: ${totalPrice}
-    
-    Ya realicé el pago y adjuntaré el comprobante.`
+  `🌸 RIFA DÍA DE LA MADRE 🌸
+  
+  👤 Nombre: ${customerName}
+  
+  📱 WhatsApp: ${customerPhone}
+  
+  🎟️ Números:
+  ${selectedNumbers.join(", ")}
+  
+  💰 Total: ${totalPrice}
+  
+  Ya realicé el pago y adjuntaré el comprobante.`
     );
-
+  
     window.open(
       `https://wa.me/573216336337?text=${message}`,
       "_blank"
@@ -269,6 +280,33 @@ export default function App() {
             </h2>
 
             <div className="space-y-4 text-center">
+            <div className="text-left">
+            <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
+              Nombre completo
+            </label>
+
+            <input
+              type="text"
+              value={customerName}
+              onChange={(e) => setCustomerName(e.target.value)}
+              placeholder="Ej: María Pérez"
+              className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
+            />
+          </div>
+
+          <div className="text-left">
+            <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
+              Número de WhatsApp
+            </label>
+
+            <input
+              type="tel"
+              value={customerPhone}
+              onChange={(e) => setCustomerPhone(e.target.value)}
+              placeholder="Ej: 3001234567"
+              className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
+            />
+          </div>
               <div>
                 <p className="text-gray-500">Números seleccionados</p>
                 <div className="flex justify-center gap-2 mt-3 flex-wrap">
