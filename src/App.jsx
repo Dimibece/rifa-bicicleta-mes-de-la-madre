@@ -59,7 +59,7 @@ export default function App() {
       (item) => item.numero === number
     );
     
-    if (reserved?.estado === "confirmado") return;
+    if (reserved) return;
 
     if (selectedNumbers.includes(number)) {
       setSelectedNumbers(selectedNumbers.filter((n) => n !== number));
@@ -220,10 +220,8 @@ export default function App() {
                     className={`
                       h-14 rounded-2xl font-bold transition-all
                       ${
-                        reserved?.estado === "confirmado"
-                          ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : reserved?.estado === "visual"
-                          ? "bg-pink-200 text-pink-500"
+                        reserved
+                         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                           : selected
                           ? "bg-pink-500 text-white scale-105"
                           : "bg-pink-100 hover:bg-pink-200 text-[#4a2c21]"
