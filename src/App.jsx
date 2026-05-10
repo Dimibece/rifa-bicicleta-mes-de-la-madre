@@ -144,10 +144,18 @@ export default function App() {
 
               <div className="mt-6 max-w-sm mx-auto">
 
-                <div className="bg-pink-50 rounded-2xl p-4">
-                  <p className="font-semibold text-[#4a2c21]">📅 Sorteo esperado</p>
-                  <p className="text-pink-500 text-2xl font-bold">24 Mayo 2026</p>
-                </div>
+              <div className="bg-pink-50 rounded-2xl p-5 text-center">
+                <p className="font-semibold text-[#4a2c21] text-lg">
+                  📅 Sorteo
+                </p>
+
+                <p className="text-pink-500 text-2xl font-bold mt-1">
+                  24 de Mayo de 2026
+                </p>
+
+                <p className="text-[#4a2c21] mt-3 font-medium">
+                  🎰 Juega con las últimas 2 cifras de la Lotería de Medellín
+                </p>
               </div>
 
               <p className="text-sm text-gray-500 mt-5">
