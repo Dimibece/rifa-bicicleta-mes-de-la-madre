@@ -6,6 +6,7 @@ export default function App() {
   );
 
   const reservedNumbers = ["03", "07", "12", "22"];
+  const availableNumbers = 100 - reservedNumbers.length;
 
   const bikeImages = [
     "/images/Bici1.jpeg",
@@ -168,6 +169,10 @@ export default function App() {
             <p className="text-center text-gray-500 mb-8">
               Selecciona {maxSelections} número(s) para continuar.
             </p>
+            <p className="text-center text-pink-500 font-semibold mt-2">
+              {availableNumbers} números disponibles
+            </p>
+
 
             <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
 
