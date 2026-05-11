@@ -82,19 +82,19 @@ export default function App() {
     }
   
     const message = encodeURIComponent(
-  `🌸 RIFA DÍA DE LA MADRE 🌸
-  
-  👤 Nombre: ${customerName}
-  
-  📱 WhatsApp: ${customerPhone}
-  
-  🎟️ Números:
-  ${selectedNumbers.join(", ")}
-  
-  💰 Total: ${totalPrice}
-  
-  Ya realicé el pago y adjuntaré el comprobante.`
-    );
+`🌸 RIFA DÍA DE LA MADRE 🌸
+
+👤 Nombre: ${customerName}
+
+📱 WhatsApp: ${customerPhone}
+
+🎟️ Números:
+${selectedNumbers.join(", ")}
+
+💰 Total: ${totalPrice}
+
+Estoy realizando el pago y en breve adjuntaré el comprobante.`
+);
   
     window.open(
       `https://wa.me/573216336337?text=${message}`,
@@ -328,61 +328,58 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="bg-pink-50 rounded-2xl p-4">
-                <p className="text-gray-500">Total a pagar</p>
+              <div>
+                <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
+
+              <p className="font-bold text-[#4a2c21] text-lg text-center">
+                💳 ¿Cómo realizar el pago?
+              </p>
+
+              <p className="text-[#4a2c21]">
+                1️⃣ Copia la cuenta Bancolombia.
+              </p>
+
+              <p className="text-[#4a2c21]">
+                2️⃣ Presiona <strong>“Continuar por WhatsApp”</strong> para enviar tus números.
+              </p>
+
+              <p className="text-[#4a2c21]">
+                3️⃣ Realiza la transferencia por:
+              </p>
+
+              <div className="bg-white rounded-2xl py-3 text-center">
                 <p className="text-3xl font-bold text-pink-500">
                   {totalPrice}
                 </p>
               </div>
 
-              <div>
-                <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
+              <p className="text-[#4a2c21]">
+                4️⃣ Adjunta el comprobante en el chat de WhatsApp.
+              </p>
 
-                  <p className="font-bold text-[#4a2c21] text-lg text-center">
-                    💳 ¿Cómo realizar el pago?
-                  </p>
+              <div className="pt-2">
+                <p className="text-sm text-gray-500 text-center">
+                  Cuenta de ahorros Bancolombia
+                </p>
 
-                  <p className="text-[#4a2c21]">
-                    1️⃣ Presiona el botón de copiar cuenta.
-                  </p>
+                <button
+                  onClick={() => {
+                    navigator.clipboard.writeText("91257872381");
+                    alert("Número de cuenta copiado");
+                  }}
+                  className="w-full mt-2 bg-pink-100 hover:bg-pink-200 text-[#4a2c21] px-4 py-3 rounded-2xl font-semibold transition"
+                >
+                  📋 Copiar cuenta: 912-578723-81
+                </button>
+              </div>
 
-                  <p className="text-[#4a2c21]">
-                    2️⃣ Abre tu aplicación bancaria y realiza la transferencia por el valor de:
-                  </p>
+              <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
+                <p className="text-sm text-red-600 font-medium text-center">
+                  ⚠️ No enviar pagos por Nequi.
+                </p>
+              </div>
 
-                  <div className="bg-white rounded-2xl py-3 text-center">
-                    <p className="text-3xl font-bold text-pink-500">
-                      {totalPrice}
-                    </p>
-                  </div>
-
-                  <p className="text-[#4a2c21]">
-                    3️⃣ Regresa aquí y presiona <strong>“Enviar WhatsApp”</strong> para adjuntar el comprobante.
-                  </p>
-
-                  <div className="pt-2">
-                    <p className="text-sm text-gray-500 text-center">
-                      Cuenta de ahorros Bancolombia
-                    </p>
-
-                    <button
-                      onClick={() => {
-                        navigator.clipboard.writeText("91257872381");
-                        alert("Número de cuenta copiado");
-                      }}
-                      className="w-full mt-2 bg-pink-100 hover:bg-pink-200 text-[#4a2c21] px-4 py-3 rounded-2xl font-semibold transition"
-                    >
-                      📋 Copiar cuenta: 912-578723-81
-                    </button>
-                  </div>
-
-                  <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
-                    <p className="text-sm text-red-600 font-medium text-center">
-                      ⚠️ No enviar pagos por Nequi para evitar confusiones.
-                    </p>
-                  </div>
-
-                </div>
+            </div>
 
 
               </div>
@@ -399,7 +396,7 @@ export default function App() {
                   onClick={handleWhatsApp}
                   className="flex-1 bg-pink-500 hover:bg-pink-600 text-white py-3 rounded-2xl font-semibold"
                 >
-                  Enviar WhatsApp
+                  Continuar por WhatsApp
                 </button>
               </div>
             </div>
