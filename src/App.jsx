@@ -141,7 +141,7 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
                 <p>1️⃣ Elige la cantidad de números que deseas.</p>
                 <p>2️⃣ Selecciona tus números favoritos.</p>
                 <p>3️⃣ Presiona “Confirmar números”.</p>
-                <p>4️⃣ Realiza el pago mediante QR Bancolombia.</p>
+                <p>4️⃣ Realiza el pago a la cuenta Bancolombia.</p>
                 <p>5️⃣ Envía tu comprobante por WhatsApp.</p>
               </div>
 
