@@ -371,8 +371,8 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
                   </p>
                 </div>
 
-                <p className="text-[#4a2c21]">
-                  usando la cuenta copiada anteriormente.
+                <p className="text-sm text-[#4a2c21]/60 italic">
+                  * Usa la cuenta copiada anteriormente
                 </p>
 
                 <p className="text-[#4a2c21]">
