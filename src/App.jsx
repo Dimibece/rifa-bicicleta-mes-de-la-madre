@@ -93,7 +93,10 @@ ${selectedNumbers.join(", ")}
 
 💰 Total: ${totalPrice}
 
-Estoy realizando el pago y en breve adjuntaré el comprobante.`
+🏦 Cuenta Bancolombia:
+912-578723-81
+
+Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
 );
   
     window.open(
@@ -328,38 +331,14 @@ Estoy realizando el pago y en breve adjuntaré el comprobante.`
                 </div>
               </div>
 
-              <div>
-                <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
+              <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
 
-              <p className="font-bold text-[#4a2c21] text-lg text-center">
-                💳 ¿Cómo realizar el pago?
-              </p>
-
-              <p className="text-[#4a2c21]">
-                1️⃣ Copia la cuenta Bancolombia.
-              </p>
-
-              <p className="text-[#4a2c21]">
-                2️⃣ Presiona <strong>“Continuar por WhatsApp”</strong> para enviar tus números.
-              </p>
-
-              <p className="text-[#4a2c21]">
-                3️⃣ Realiza la transferencia por:
-              </p>
-
-              <div className="bg-white rounded-2xl py-3 text-center">
-                <p className="text-3xl font-bold text-pink-500">
-                  {totalPrice}
+                <p className="font-bold text-[#4a2c21] text-lg text-center">
+                  💳 ¿Cómo realizar el pago?
                 </p>
-              </div>
 
-              <p className="text-[#4a2c21]">
-                4️⃣ Adjunta el comprobante en el chat de WhatsApp.
-              </p>
-
-              <div className="pt-2">
-                <p className="text-sm text-gray-500 text-center">
-                  Cuenta de ahorros Bancolombia
+                <p className="text-[#4a2c21]">
+                  1️⃣ Copia la siguiente cuenta Bancolombia:
                 </p>
 
                 <button
@@ -367,20 +346,38 @@ Estoy realizando el pago y en breve adjuntaré el comprobante.`
                     navigator.clipboard.writeText("91257872381");
                     alert("Número de cuenta copiado");
                   }}
-                  className="w-full mt-2 bg-pink-100 hover:bg-pink-200 text-[#4a2c21] px-4 py-3 rounded-2xl font-semibold transition"
+                  className="w-full bg-pink-500 hover:bg-pink-600 text-white px-4 py-4 rounded-2xl font-bold text-lg transition shadow-md"
                 >
                   📋 Copiar cuenta: 912-578723-81
                 </button>
-              </div>
 
-              <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
-                <p className="text-sm text-red-600 font-medium text-center">
-                  ⚠️ No enviar pagos por Nequi.
+                <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
+                  <p className="text-sm text-red-600 font-medium text-center">
+                    ⚠️ No enviar pagos por Nequi.
+                  </p>
+                </div>
+
+                <p className="text-[#4a2c21]">
+                  2️⃣ Presiona <strong>“Continuar por WhatsApp”</strong> para enviar tus números.
                 </p>
-              </div>
 
-            </div>
+                <p className="text-[#4a2c21]">
+                  3️⃣ Luego de enviar el mensaje, realiza la transferencia por:
+                </p>
 
+                <div className="bg-white rounded-2xl py-3 text-center shadow-sm">
+                  <p className="text-3xl font-bold text-pink-500">
+                    {totalPrice}
+                  </p>
+                </div>
+
+                <p className="text-[#4a2c21]">
+                  usando la cuenta copiada anteriormente.
+                </p>
+
+                <p className="text-[#4a2c21]">
+                  4️⃣ Adjunta la imagen del comprobante en el chat de WhatsApp.
+                </p>
 
               </div>
 
