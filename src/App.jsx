@@ -336,39 +336,53 @@ export default function App() {
               </div>
 
               <div>
-                <p className="font-semibold text-[#4a2c21] mb-3">
-                  Escanea el QR Bancolombia
-                </p>
+                <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
 
-                <img
-                 src="/images/qr-bancolombia.jpeg"
-                  alt="QR Bancolombia"
-                 className="w-52 h-52 rounded-2xl mx-auto object-cover"
-                />
+                  <p className="font-bold text-[#4a2c21] text-lg text-center">
+                    💳 ¿Cómo realizar el pago?
+                  </p>
 
-                <div className="mt-4">
-                  <p className="text-sm text-gray-500">
-                  Cuenta de ahorros Bancolombia
-                 </p>
+                  <p className="text-[#4a2c21]">
+                    1️⃣ Presiona el botón de copiar cuenta.
+                  </p>
 
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText("91257872381");
-                    alert("Número de cuenta copiado");
-                  }}
-                  className="mt-2 bg-pink-100 hover:bg-pink-200 text-[#4a2c21] px-4 py-2 rounded-xl font-semibold transition"
-                >
-                  📋 Copiar cuenta: 912-578723-81
-                </button>
-              </div>
+                  <p className="text-[#4a2c21]">
+                    2️⃣ Abre tu aplicación bancaria y realiza la transferencia por el valor de:
+                  </p>
 
-              <p className="text-sm text-gray-500 mt-5">
-                  Una vez realizado el pago, envía el comprobante al WhatsApp:
-                </p>
+                  <div className="bg-white rounded-2xl py-3 text-center">
+                    <p className="text-3xl font-bold text-pink-500">
+                      {totalPrice}
+                    </p>
+                  </div>
 
-                <p className="text-xl font-bold text-pink-500 mt-1">
-                  321 633 6337
-                </p>
+                  <p className="text-[#4a2c21]">
+                    3️⃣ Regresa aquí y presiona <strong>“Enviar WhatsApp”</strong> para adjuntar el comprobante.
+                  </p>
+
+                  <div className="pt-2">
+                    <p className="text-sm text-gray-500 text-center">
+                      Cuenta de ahorros Bancolombia
+                    </p>
+
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText("91257872381");
+                        alert("Número de cuenta copiado");
+                      }}
+                      className="w-full mt-2 bg-pink-100 hover:bg-pink-200 text-[#4a2c21] px-4 py-3 rounded-2xl font-semibold transition"
+                    >
+                      📋 Copiar cuenta: 912-578723-81
+                    </button>
+                  </div>
+
+                  <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
+                    <p className="text-sm text-red-600 font-medium text-center">
+                      ⚠️ No enviar pagos por Nequi para evitar confusiones.
+                    </p>
+                  </div>
+
+                </div>
 
 
               </div>
