@@ -107,11 +107,11 @@ export default function App() {
               🌸 Rifa Mes de la Madre
             </h1>
 
-            <p className="text-pink-500 text-xl mt-3 mb-6">
+            <p className="text-pink-500 text-lg md:text-xl mt-2 mb-5">
               Participa por esta hermosa bicicleta femenina con canasta
             </p>
             <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
-        <div className="flex gap-3 w-max px-2">
+           <div className="flex gap-3 w-max px-2">
               {bikeImages.map((image, index) => (
                 <img
                   key={index}
@@ -123,11 +123,9 @@ export default function App() {
             </div>
           </div>
           
-            <div className="mt-6 bg-white border border-pink-100 rounded-3xl p-6 shadow-sm max-w-4xl mx-auto text-left">
+          <div className="max-w-sm mx-auto mb-8">
 
-              <div className="mt-6 max-w-sm mx-auto">
-
-                <div className="bg-pink-50 rounded-2xl p-5 text-center">
+              <div className="bg-pink-50 rounded-2xl p-5 text-center border border-pink-100">
                   <p className="font-semibold text-[#4a2c21] text-lg">
                     📅 Sorteo
                   </p>
@@ -144,8 +142,7 @@ export default function App() {
                 <p className="text-sm text-gray-500 mt-5">
                   *La fecha puede ajustarse en caso de no completarse los números disponibles.
                 </p>
-              </div>
-            </div>
+          </div>
           </div>
 
 
