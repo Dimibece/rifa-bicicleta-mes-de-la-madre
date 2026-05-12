@@ -83,18 +83,12 @@ export default function App() {
 
     const message = encodeURIComponent(
       `🌸 RIFA MES DE LA MADRE 🌸
-      
-      Hola, quiero reservar los siguientes números:
-      
-      👤 Nombre: ${customerName}
-      
-      📱 WhatsApp: ${customerPhone}
-      
-      🎟️ Números:
-      ${selectedNumbers.join(", ")}
-      
-      💰 Total:
-      ${totalPrice}`
+    👤 ${customerName}
+    📱 ${customerPhone}
+    🎟️ Números: ${selectedNumbers.join(", ")}
+    💰 Total: ${totalPrice}
+    
+    Quiero reservar estos números y enviaré el comprobante de pago por este chat.`
     );
 
     window.open(
