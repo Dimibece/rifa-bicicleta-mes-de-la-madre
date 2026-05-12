@@ -82,22 +82,20 @@ export default function App() {
     }
   
     const message = encodeURIComponent(
-`🌸 RIFA DÍA DE LA MADRE 🌸
-
-👤 Nombre: ${customerName}
-
-📱 WhatsApp: ${customerPhone}
-
-🎟️ Números:
-${selectedNumbers.join(", ")}
-
-💰 Total: ${totalPrice}
-
-🏦 Cuenta Bancolombia:
-912-578723-81
-
-Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
-);
+      `🌸 RIFA MES DE LA MADRE 🌸
+      
+      Hola, quiero reservar los siguientes números:
+      
+      👤 Nombre: ${customerName}
+      
+      📱 WhatsApp: ${customerPhone}
+      
+      🎟️ Números:
+      ${selectedNumbers.join(", ")}
+      
+      💰 Total:
+      ${totalPrice}`
+      );
   
     window.open(
       `https://wa.me/573216336337?text=${message}`,
@@ -133,17 +131,6 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
             </p>
 
             <div className="mt-6 bg-white border border-pink-100 rounded-3xl p-6 shadow-sm max-w-4xl mx-auto text-left">
-              <h2 className="text-2xl font-bold text-[#4a2c21] mb-4">
-                ¿Cómo participar?
-              </h2>
-
-              <div className="space-y-3 text-[#4a2c21]">
-                <p>1️⃣ Elige la cantidad de números que deseas.</p>
-                <p>2️⃣ Selecciona tus números favoritos.</p>
-                <p>3️⃣ Presiona “Confirmar números”.</p>
-                <p>4️⃣ Realiza el pago a la cuenta Bancolombia.</p>
-                <p>5️⃣ Envía tu comprobante por WhatsApp.</p>
-              </div>
 
               <div className="mt-6 max-w-sm mx-auto">
 
@@ -205,13 +192,20 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
               </button>
             </div>
 
-            <p className="text-center text-gray-500 mb-8">
-              Selecciona {maxSelections} número(s) para continuar.
-            </p>
             <p className="text-center text-pink-500 font-semibold mt-2">
               {availableNumbers} números disponibles
             </p>
+            <div className="flex justify-center gap-6 mt-4 mb-6 text-sm">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded bg-pink-100 border border-pink-200"></div>
+                <span className="text-[#4a2c21]">Disponible</span>
+              </div>
 
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 rounded bg-gray-300"></div>
+                <span className="text-[#4a2c21]">Ocupado</span>
+              </div>
+            </div>
 
             <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
 
@@ -263,11 +257,11 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
                 onClick={() => setShowModal(true)}
                 className="bg-[#4a2c21] hover:bg-[#2f1a13] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition"
               >
-                Confirmar números
+                Continuar
               </button>
 
               <p className="text-sm text-gray-500 mt-5">
-                Los números serán confirmados una vez validado el pago.
+              Los números se reservan temporalmente hasta validar el pago.
               </p>
 
             </div>
@@ -331,55 +325,11 @@ Voy a realizar la transferencia y adjuntaré el comprobante en este chat.`
                 </div>
               </div>
 
-              <div className="bg-pink-50 rounded-2xl p-5 text-left space-y-4">
-
-                <p className="font-bold text-[#4a2c21] text-lg text-center">
-                  💳 ¿Cómo realizar el pago?
+              <div className="bg-pink-50 rounded-2xl p-5 text-center">
+                  <p className="text-[#4a2c21] font-medium">
+                  Al continuar, se abrirá WhatsApp con tus números seleccionados para completar la reserva.
                 </p>
-
-                <p className="text-[#4a2c21]">
-                  1️⃣ Copia la siguiente cuenta Bancolombia:
-                </p>
-
-                <button
-                  onClick={() => {
-                    navigator.clipboard.writeText("91257872381");
-                    alert("Número de cuenta copiado");
-                  }}
-                  className="w-full bg-pink-500 hover:bg-pink-600 text-white px-4 py-4 rounded-2xl font-bold text-lg transition shadow-md"
-                >
-                  📋 Copiar cuenta: 912-578723-81
-                </button>
-
-                <div className="bg-red-50 border border-red-200 rounded-2xl p-3">
-                  <p className="text-sm text-red-600 font-medium text-center">
-                    ⚠️ No enviar pagos por Nequi.
-                  </p>
-                </div>
-
-                <p className="text-[#4a2c21]">
-                  2️⃣ Presiona <strong>“Continuar por WhatsApp”</strong> para enviar tus números.
-                </p>
-
-                <p className="text-[#4a2c21]">
-                  3️⃣ Luego de enviar el mensaje, realiza la transferencia por:
-                </p>
-
-                <div className="bg-white rounded-2xl py-3 text-center shadow-sm">
-                  <p className="text-3xl font-bold text-pink-500">
-                    {totalPrice}
-                  </p>
-                </div>
-
-                <p className="text-sm text-[#4a2c21]/60 italic">
-                  * Usa la cuenta copiada anteriormente
-                </p>
-
-                <p className="text-[#4a2c21]">
-                  4️⃣ Adjunta la imagen del comprobante en el chat de WhatsApp.
-                </p>
-
-              </div>
+              </div>  
 
               <div className="flex gap-3 pt-4">
                 <button
