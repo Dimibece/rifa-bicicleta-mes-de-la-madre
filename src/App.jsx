@@ -108,14 +108,14 @@ export default function App() {
       <div className="min-h-screen bg-[#fdf8f6] p-6">
         <div className="max-w-6xl mx-auto">
 
-          <div className="overflow-x-auto pb-4 mb-8">
-            <div className="flex gap-4 w-max px-2">
+        <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
+        <div className="flex gap-3 w-max px-2">
               {bikeImages.map((image, index) => (
                 <img
                   key={index}
                   src={image}
                   alt="Bicicleta"
-                  className="w-[350px] h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
+                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
                 />
               ))}
             </div>
