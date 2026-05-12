@@ -110,7 +110,19 @@ export default function App() {
             <p className="text-pink-500 text-xl mt-3">
               Participa por esta hermosa bicicleta femenina con canasta
             </p>
-
+            <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
+        <div className="flex gap-3 w-max px-2">
+              {bikeImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt="Bicicleta"
+                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
+                />
+              ))}
+            </div>
+          </div>
+          
             <div className="mt-6 bg-white border border-pink-100 rounded-3xl p-6 shadow-sm max-w-4xl mx-auto text-left">
 
               <div className="mt-6 max-w-sm mx-auto">
@@ -136,18 +148,6 @@ export default function App() {
             </div>
           </div>
 
-          <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
-        <div className="flex gap-3 w-max px-2">
-              {bikeImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt="Bicicleta"
-                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
-                />
-              ))}
-            </div>
-          </div>
 
           <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
 
