@@ -32,18 +32,18 @@ export default function App() {
       .then((response) => response.text())
       .then((data) => {
         const lines = data.split("\n").slice(1);
-  
+
         const formatted = lines
           .map((line) => {
             const [numero, estado] = line.split(",");
-  
+
             return {
               numero: numero?.trim(),
               estado: estado?.trim(),
             };
           })
           .filter((item) => item.numero);
-  
+
         setReservedNumbers(formatted);
       });
   }, []);
@@ -54,7 +54,7 @@ export default function App() {
     const reserved = reservedNumbers.find(
       (item) => item.numero === number
     );
-    
+
     if (reserved) return;
 
     if (selectedNumbers.includes(number)) {
@@ -75,12 +75,12 @@ export default function App() {
       alert("Debes ingresar un nombre y un WhatsApp válido de 10 dígitos.");
       return;
     }
-  
+
     if (selectedNumbers.length < maxSelections) {
       alert(`Debes seleccionar ${maxSelections} número(s).`);
       return;
     }
-  
+
     const message = encodeURIComponent(
       `🌸 RIFA MES DE LA MADRE 🌸
       
@@ -95,8 +95,8 @@ export default function App() {
       
       💰 Total:
       ${totalPrice}`
-      );
-  
+    );
+
     window.open(
       `https://wa.me/573216336337?text=${message}`,
       "_blank"
@@ -134,32 +134,32 @@ export default function App() {
 
               <div className="mt-6 max-w-sm mx-auto">
 
-              <div className="bg-pink-50 rounded-2xl p-5 text-center">
-                <p className="font-semibold text-[#4a2c21] text-lg">
-                  📅 Sorteo
-                </p>
+                <div className="bg-pink-50 rounded-2xl p-5 text-center">
+                  <p className="font-semibold text-[#4a2c21] text-lg">
+                    📅 Sorteo
+                  </p>
 
-                <p className="text-pink-500 text-2xl font-bold mt-1">
-                  24 de Mayo de 2026
-                </p>
+                  <p className="text-pink-500 text-2xl font-bold mt-1">
+                    24 de Mayo de 2026
+                  </p>
 
-                <p className="text-[#4a2c21] mt-3 font-medium">
-                  🎰 Juega con las últimas 2 cifras de la Lotería de Medellín
+                  <p className="text-[#4a2c21] mt-3 font-medium">
+                    🎰 Juega con las últimas 2 cifras de la Lotería de Medellín
+                  </p>
+                </div>
+
+                <p className="text-sm text-gray-500 mt-5">
+                  *La fecha puede ajustarse en caso de no completarse los números disponibles.
                 </p>
               </div>
-
-              <p className="text-sm text-gray-500 mt-5">
-                *La fecha puede ajustarse en caso de no completarse los números disponibles.
-              </p>
             </div>
-           </div>
-           </div>
+          </div>
 
           <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
 
-          <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
-            Escoge una opción 👇
-          </p>
+            <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
+              Escoge una opción 👇
+            </p>
 
             <div className="flex justify-center gap-4 mb-4 flex-wrap">
 
@@ -168,11 +168,10 @@ export default function App() {
                   setTicketOption("1");
                   setSelectedNumbers([]);
                 }}
-                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${
-                  ticketOption === "1"
+                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${ticketOption === "1"
                     ? "bg-pink-500 text-white scale-105 shadow-lg"
                     : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
-                }`}
+                  }`}
               >
                 1 número — $10.000
               </button>
@@ -182,11 +181,10 @@ export default function App() {
                   setTicketOption("2");
                   setSelectedNumbers([]);
                 }}
-                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${
-                  ticketOption === "2"
+                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${ticketOption === "2"
                     ? "bg-pink-500 text-white scale-105 shadow-lg"
                     : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
-                }`}
+                  }`}
               >
                 2 números — $18.000
               </button>
@@ -219,16 +217,13 @@ export default function App() {
                   <button
                     key={number}
                     onClick={() => toggleNumber(number)}
-                    className={`
-                      h-14 rounded-2xl font-bold transition-all
-                      ${
-                        reserved
-                         ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                          : selected
-                          ? "bg-pink-500 text-white scale-105"
-                          : "bg-pink-100 hover:bg-pink-200 text-[#4a2c21]"
-                      }
-                    `}
+                    className={`h-14 rounded-2xl font-bold transition-all ${
+                      reserved
+                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                        : selected
+                        ? "bg-pink-500 text-white scale-105"
+                        : "bg-pink-100 hover:bg-pink-200 text-[#4a2c21]"
+                    }`}
                   >
                     {number}
                   </button>
@@ -261,7 +256,7 @@ export default function App() {
               </button>
 
               <p className="text-sm text-gray-500 mt-5">
-              Los números se reservan temporalmente hasta validar el pago.
+                Los números se reservan temporalmente hasta validar el pago.
               </p>
 
             </div>
@@ -277,40 +272,40 @@ export default function App() {
             </h2>
 
             <div className="space-y-4 text-center">
-            <div className="text-left">
-            <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
-              Nombre completo
-            </label>
+              <div className="text-left">
+                <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
+                  Nombre completo
+                </label>
 
-            <input
-              type="text"
-              value={customerName}
-              onChange={(e) => setCustomerName(e.target.value)}
-              placeholder="Ej: María Pérez"
-              className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
-            />
-          </div>
+                <input
+                  type="text"
+                  value={customerName}
+                  onChange={(e) => setCustomerName(e.target.value)}
+                  placeholder="Ej: María Pérez"
+                  className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
+                />
+              </div>
 
-          <div className="text-left">
-            <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
-              Número de WhatsApp
-            </label>
+              <div className="text-left">
+                <label className="block text-sm font-semibold text-[#4a2c21] mb-2">
+                  Número de WhatsApp
+                </label>
 
-            <input
-              type="tel"
-              value={customerPhone}
-              onChange={(e) => {
-                const value = e.target.value.replace(/\D/g, "");
-                
-                if (value.length <= 10) {
-                  setCustomerPhone(value);
-                }
-              }}
-              placeholder="Ej: 3001234567"
-              className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
-            />  
+                <input
+                  type="tel"
+                  value={customerPhone}
+                  onChange={(e) => {
+                    const value = e.target.value.replace(/\D/g, "");
 
-          </div>
+                    if (value.length <= 10) {
+                      setCustomerPhone(value);
+                    }
+                  }}
+                  placeholder="Ej: 3001234567"
+                  className="w-full border border-pink-200 rounded-2xl px-4 py-3 outline-none focus:border-pink-400"
+                />
+
+              </div>
               <div>
                 <p className="text-gray-500">Números seleccionados</p>
                 <div className="flex justify-center gap-2 mt-3 flex-wrap">
@@ -326,10 +321,10 @@ export default function App() {
               </div>
 
               <div className="bg-pink-50 rounded-2xl p-5 text-center">
-                  <p className="text-[#4a2c21] font-medium">
+                <p className="text-[#4a2c21] font-medium">
                   Al continuar, se abrirá WhatsApp con tus números seleccionados para completar la reserva.
                 </p>
-              </div>  
+              </div>
 
               <div className="flex gap-3 pt-4">
                 <button
