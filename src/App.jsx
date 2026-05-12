@@ -102,19 +102,6 @@ export default function App() {
       <div className="min-h-screen bg-[#fdf8f6] p-6">
         <div className="max-w-6xl mx-auto">
 
-        <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
-        <div className="flex gap-3 w-max px-2">
-              {bikeImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt="Bicicleta"
-                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
-                />
-              ))}
-            </div>
-          </div>
-
           <div className="text-center mb-8">
             <h1 className="text-5xl font-serif text-[#4a2c21]">
               🌸 Rifa Mes de la Madre
@@ -146,6 +133,19 @@ export default function App() {
                   *La fecha puede ajustarse en caso de no completarse los números disponibles.
                 </p>
               </div>
+            </div>
+          </div>
+
+          <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
+        <div className="flex gap-3 w-max px-2">
+              {bikeImages.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt="Bicicleta"
+                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
+                />
+              ))}
             </div>
           </div>
 
