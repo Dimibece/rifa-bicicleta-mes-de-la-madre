@@ -107,7 +107,7 @@ export default function App() {
               🌸 Rifa Mes de la Madre
             </h1>
 
-            <p className="text-pink-500 text-xl mt-3">
+            <p className="text-pink-500 text-xl mt-3 mb-6">
               Participa por esta hermosa bicicleta femenina con canasta
             </p>
             <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
