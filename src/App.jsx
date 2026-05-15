@@ -131,7 +131,7 @@ export default function App() {
                   </p>
 
                   <p className="text-pink-500 text-2xl font-bold mt-1">
-                    24 de Mayo de 2026
+                    29 de Mayo de 2026
                   </p>
 
                   <p className="text-[#4a2c21] mt-3 font-medium">
