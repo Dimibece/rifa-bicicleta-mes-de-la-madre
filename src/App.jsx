@@ -135,7 +135,7 @@ export default function App() {
                   </p>
 
                   <p className="text-[#4a2c21] mt-3 font-medium">
-                    🎰 Juega con las últimas 2 cifras de la Lotería de Medellín
+                    🎰 Juega con las últimas 2 cifras de la Lotería de Medellín del viernes 29 de Mayo de 2026
                   </p>
                 </div>
 
