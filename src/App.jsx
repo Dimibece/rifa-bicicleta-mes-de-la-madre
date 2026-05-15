@@ -140,7 +140,8 @@ export default function App() {
                 </div>
 
                 <p className="text-sm text-gray-500 mt-5">
-                  *La fecha puede ajustarse en caso de no completarse los números disponibles.
+                ✅ Fecha confirmada del sorteo:
+                Viernes 29 de Mayo de 2026.
                 </p>
           </div>
           </div>
