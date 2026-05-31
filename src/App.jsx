@@ -101,158 +101,49 @@ export default function App() {
     <>
       <div className="min-h-screen bg-[#fdf8f6] p-6">
         <div className="max-w-6xl mx-auto">
+<div className="text-center">
 
-          <div className="text-center mb-8">
-            <h1 className="text-5xl font-serif text-[#4a2c21]">
-              🌸 Rifa Mes de la Madre
-            </h1>
+  <h1 className="text-5xl font-serif text-[#4a2c21] mb-4">
+    🎉 ¡Tenemos Ganadora!
+  </h1>
 
-            <p className="text-pink-500 text-lg md:text-xl mt-2 mb-5">
-              Participa por esta hermosa bicicleta femenina con canasta
-            </p>
-            <div className="overflow-x-auto pb-4 mb-8 scrollbar-hide">
-           <div className="flex gap-3 w-max px-2">
-              {bikeImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt="Bicicleta"
-                  className="w-[260px] h-[240px] md:w-[350px] md:h-[320px] object-cover rounded-3xl shadow-md border border-pink-100"
-                />
-              ))}
-            </div>
-          </div>
-          
-          <div className="max-w-sm mx-auto mb-8">
+  <p className="text-pink-500 text-xl mb-8">
+    Gracias a todos por participar en la Rifa del Mes de la Madre
+  </p>
 
-              <div className="bg-pink-50 rounded-2xl p-5 text-center border border-pink-100">
-                  <p className="font-semibold text-[#4a2c21] text-lg">
-                    📅 Sorteo
-                  </p>
+  <div className="bg-white rounded-3xl shadow-md p-8 border border-pink-100 max-w-2xl mx-auto">
 
-                  <p className="text-pink-500 text-2xl font-bold mt-1">
-                    29 de Mayo de 2026
-                  </p>
+    <img
+      src="/images/BenildaRamirez.jpeg"
+      alt="Ganadora"
+      className="w-40 h-40 rounded-full object-cover mx-auto border-4 border-pink-300"
+    />
 
-                  <p className="text-[#4a2c21] mt-3 font-medium">
-                    🎰 Juega con las últimas 2 cifras de la Lotería de Medellín del viernes 29 de Mayo de 2026
-                  </p>
-                </div>
+    <h2 className="text-3xl font-bold text-[#4a2c21] mt-6">
+      Benilda Ramírez
+    </h2>
 
-                <p className="text-sm text-gray-500 mt-5">
-                ✅ Fecha confirmada del sorteo:
-                Viernes 29 de Mayo de 2026.
-                </p>
-          </div>
-          </div>
+    <p className="text-pink-500 text-xl mt-2">
+      Número ganador: <strong>98</strong>
+    </p>
 
+    <img
+      src="/images/LoteriaDeMedellin.jpeg"
+      alt="Resultado Lotería"
+      className="rounded-2xl shadow-md mt-8 mx-auto"
+    />
 
-          <div className="bg-white rounded-3xl shadow-md p-6 border border-pink-100">
+    <p className="mt-8 text-[#4a2c21] text-lg">
+      Felicitaciones a nuestra ganadora y gracias a todas las personas que hicieron parte de esta rifa.
+    </p>
 
-            <p className="text-center text-[#4a2c21] font-semibold text-lg mb-4">
-              Escoge una opción 👇
-            </p>
+    <p className="mt-4 text-gray-600">
+      Muy pronto estaremos realizando nuevas rifas con premios aún más grandes.
+    </p>
 
-            <div className="flex justify-center gap-4 mb-4 flex-wrap">
+  </div>
 
-              <button
-                onClick={() => {
-                  setTicketOption("1");
-                  setSelectedNumbers([]);
-                }}
-                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${ticketOption === "1"
-                    ? "bg-pink-500 text-white scale-105 shadow-lg"
-                    : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
-                  }`}
-              >
-                1 número — $10.000
-              </button>
-
-              <button
-                onClick={() => {
-                  setTicketOption("2");
-                  setSelectedNumbers([]);
-                }}
-                className={`w-[260px] py-5 rounded-3xl font-bold text-xl transition-all shadow-sm ${ticketOption === "2"
-                    ? "bg-pink-500 text-white scale-105 shadow-lg"
-                    : "bg-pink-50 text-[#4a2c21] hover:bg-pink-100"
-                  }`}
-              >
-                2 números — $18.000
-              </button>
-            </div>
-
-            <p className="text-center text-pink-500 font-semibold mt-2">
-              {availableNumbers} números disponibles
-            </p>
-            <div className="flex justify-center gap-6 mt-4 mb-6 text-sm">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded bg-pink-100 border border-pink-200"></div>
-                <span className="text-[#4a2c21]">Disponible</span>
-              </div>
-
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-4 rounded bg-gray-300"></div>
-                <span className="text-[#4a2c21]">Ocupado</span>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-5 md:grid-cols-10 gap-3">
-
-              {numbers.map((number) => {
-                const reserved = reservedNumbers.find(
-                  (item) => item.numero === number
-                );
-                const selected = selectedNumbers.includes(number);
-
-                return (
-                  <button
-                    key={number}
-                    onClick={() => toggleNumber(number)}
-                    className={`h-14 rounded-2xl font-bold transition-all ${
-                      reserved
-                        ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                        : selected
-                        ? "bg-pink-500 text-white scale-105"
-                        : "bg-pink-100 hover:bg-pink-200 text-[#4a2c21]"
-                    }`}
-                  >
-                    {number}
-                  </button>
-                );
-              })}
-            </div>
-
-            <div className="mt-8 text-center">
-
-              <p className="text-lg text-[#4a2c21] mb-4">
-                Números seleccionados:
-              </p>
-
-              <div className="flex justify-center gap-3 flex-wrap mb-6">
-                {selectedNumbers.map((number) => (
-                  <div
-                    key={number}
-                    className="bg-pink-500 text-white px-4 py-2 rounded-xl font-bold"
-                  >
-                    {number}
-                  </div>
-                ))}
-              </div>
-
-              <button
-                onClick={() => setShowModal(true)}
-                className="bg-[#4a2c21] hover:bg-[#2f1a13] text-white px-8 py-4 rounded-2xl text-lg font-semibold transition"
-              >
-                Continuar
-              </button>
-
-              <p className="text-sm text-gray-500 mt-5">
-                Los números se reservan temporalmente hasta validar el pago.
-              </p>
-
-            </div>
-          </div>
+</div>
         </div>
       </div>
 
